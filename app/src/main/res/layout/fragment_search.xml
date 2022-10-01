@@ -16,22 +16,45 @@
         android:layout_marginTop="30dp"
         android:drawableLeft="@drawable/search"
         android:drawablePadding="10dp"
-        android:text="Choose the Country you need ..."
-        android:textSize="18sp"
+        android:text="Nhập giá tiền và loại phòng bạn muốn tìm kiếm"
+        android:textSize="15sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Spinner
-        android:id="@+id/spinner_search_country"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginStart="25dp"
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="25dp"
-        android:scrollbarAlwaysDrawHorizontalTrack="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView23" />
+        android:text="Số người"
+    />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:id="@+id/et_priceroom"
+        android:hint="Số người"
+        android:text="1"
+        android:inputType="number"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:text="Giá"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/et_people"
+        android:layout_marginHorizontal="20dp"
+        android:hint="Giá"
+        android:text="1"
+        android:inputType="number"
+        />
+
 
     <Button
         android:id="@+id/btn_Search"

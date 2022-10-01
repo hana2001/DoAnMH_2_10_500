@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="140dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/FrameItemHotel"
+    android:id="@+id/FrameItemRoom"
     android:layout_margin="8dp">
 
     <androidx.cardview.widget.CardView
@@ -39,13 +39,13 @@
 
             <TextView
 
-                android:id="@+id/tvHotelName"
+                android:id="@+id/tvLoaiPhong"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="23dp"
                 android:layout_marginTop="20dp"
-                android:text="H_Name"
+                android:text="Loại Phòng"
                 android:textColor="#000"
                 android:textSize="22sp" />
 
@@ -53,7 +53,7 @@
                 android:id="@+id/tvHotelPrice_Period"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/tvHotelName"
+                android:layout_below="@id/tvLoaiPhong"
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="10dp"
@@ -70,24 +70,9 @@
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="10dp"
-                android:drawableLeft="@drawable/location"
-                android:text="location"
+                android:drawableLeft="@drawable/people"
+                android:text="soNguoi"
                 android:textSize="15sp" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_reserve"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignEnd="@id/tvHotelPrice_Period"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginEnd="11dp"
-                android:layout_marginBottom="16dp"
-                android:text="Resrve"
-                android:textAllCaps="false"
-                android:textStyle="bold"
-                android:visibility="visible"
-                app:cornerRadius="10dp" />
 
         </RelativeLayout>
 

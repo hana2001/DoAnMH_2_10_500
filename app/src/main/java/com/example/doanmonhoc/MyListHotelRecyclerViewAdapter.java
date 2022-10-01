@@ -2,6 +2,8 @@ package com.example.doanmonhoc;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,7 +35,17 @@ public class MyListHotelRecyclerViewAdapter extends RecyclerView.Adapter<MyListH
         holder.mItem = mValues.get(position);
 
         holder.mHotelName.setText(holder.mItem.getName());
-        holder.mHotelPrice.setText(String.format("%.0f", holder.mItem.getPrice()));
+        holder.mHotelPrice.setText(holder.mItem.getPrice());
+
+        // Todo: handle onClick item
+        holder.mFrameItem.setOnClickListener(view -> {
+            Bundle bd = new Bundle();
+            bd.putSerializable("itemHotel", holder.mItem);
+
+            Intent intent = new Intent(view.getContext(), DetailHotelActivity.class);
+            intent.putExtra("Data", bd);
+            view.getContext().startActivity(intent);
+        });
     }
 
     @Override
@@ -46,11 +58,13 @@ public class MyListHotelRecyclerViewAdapter extends RecyclerView.Adapter<MyListH
         public Hotel mItem;
         public TextView mHotelName;
         public TextView mHotelPrice;
+        public View mFrameItem;
 
         public ViewHolder(FragmentListHotelBinding binding) {
             super(binding.getRoot());
             this.mHotelName = binding.tvHotelName;
             this.mHotelPrice = binding.tvHotelPricePeriod;
+            this.mFrameItem = binding.FrameItemHotel;
         }
 
     }

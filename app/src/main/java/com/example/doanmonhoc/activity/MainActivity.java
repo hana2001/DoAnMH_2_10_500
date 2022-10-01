@@ -1,8 +1,7 @@
-package com.example.doanmonhoc;
-
+package com.example.doanmonhoc.activity;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
+import com.example.doanmonhoc.R;
 
 public class MainActivity extends AppCompatActivity {
     @Override

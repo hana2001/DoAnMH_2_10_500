@@ -25,11 +25,11 @@
 
             <ImageView
                 android:layout_marginLeft="5dp"
-                android:id="@+id/imgHotel1"
+                android:id="@+id/imgHotel"
                 android:layout_width="130dp"
                 android:layout_height="match_parent"
                 android:scaleType="fitCenter"
-                android:src="@drawable/hotel1"/>
+               />
         </androidx.cardview.widget.CardView>
 
         <RelativeLayout

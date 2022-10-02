@@ -10,6 +10,7 @@ import android.widget.DatePicker;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.example.doanmonhoc.activity.MainActivity;
 import com.example.doanmonhoc.databinding.ActivityBookRoomBinding;
 import com.example.doanmonhoc.models.Room;
 
@@ -31,6 +32,8 @@ public class BookRoomActivity extends AppCompatActivity implements View.OnClickL
 
         binding = ActivityBookRoomBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        binding.btnBack.setOnClickListener(view -> finish());
+
 
         Intent intent = getIntent();
 
@@ -44,6 +47,7 @@ public class BookRoomActivity extends AppCompatActivity implements View.OnClickL
         btnCheckIn.setOnClickListener(this);
         btnCheckOut.setOnClickListener(this);
         binding.btnDatPhong.setOnClickListener(view -> {
+            // Todo: Kiểm ta thông tin nhâp
             if (binding.etName.getText().toString().isEmpty()) {
                 binding.etName.setError("Vui lòng nhập họ tên");
                 binding.etName.setFocusable(true);
@@ -65,6 +69,8 @@ public class BookRoomActivity extends AppCompatActivity implements View.OnClickL
                 return;
             }
             Toast.makeText(this, "Đặt hàng thành công", Toast.LENGTH_SHORT).show();
+            finish();
+            view.getContext().startActivity(new Intent(view.getContext(), MainActivity.class));
         });
 
     }
@@ -103,7 +109,8 @@ public class BookRoomActivity extends AppCompatActivity implements View.OnClickL
                                             dateCheckIn = simpleDateFormat.parse(binding.inDateCheckIn.getText().toString());
                                             dateCheckOut = simpleDateFormat.parse(binding.inDateCheckOut.getText().toString());
 
-                                            double totalPrice = room.getPriceRoom() *  (dateCheckOut.getDay() - dateCheckIn.getDay());
+                                            int countDay = (int) ((dateCheckOut.getTime() - dateCheckIn.getTime()) / 86400000);
+                                            double totalPrice = room.getPriceRoom() * countDay;
 
                                             DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
                                             binding.tvTongTien.setText(String.format("Tổng tiền: %s đ", decimalFormat.format( totalPrice )));

@@ -31,7 +31,6 @@ public class DetailHotelActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         ImageView img = binding.imgview;
-
         TextView name = binding.tvHotelname4;
         TextView location = binding.tvLocation4;
         TextView description = binding.tvDescription;
@@ -41,11 +40,12 @@ public class DetailHotelActivity extends AppCompatActivity {
         TextView workDay = binding.tvDayWork4;
         TextView more = binding.textViewMoreRoom;
 
+
         RecyclerView RCrooms = binding.RCrooms;
 
         // btn
+        binding.btnBack.setOnClickListener(view -> finish());
 
-        binding.btnBack.setOnClickListener(view -> view.getContext().startActivity(new Intent(view.getContext(), MainActivity.class)));
 
         Intent intent = this.getIntent();
 
@@ -68,12 +68,15 @@ public class DetailHotelActivity extends AppCompatActivity {
 
         RCrooms.setAdapter(new ListRoomRecyclerViewAdapter(rooms));
 
+        img.setImageResource(hotel.getImage());
         name.setText(hotel.getName());
         location.setText(hotel.getLocation());
         description.setText(hotel.getDescription());
         String[] strings = hotel.getPrice().split(" ");
         price.setText(String.format("%s\n%s\n%s", strings[0], strings[1], strings[2]));
         phone.setText(hotel.getPhone());
+        owner.setText(hotel.getOwner());
+
     }
 
 }

@@ -8,11 +8,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.doanmonhoc.databinding.FragmentListRoomBinding;
 import com.example.doanmonhoc.models.Room;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class ListRoomRecyclerViewAdapter extends RecyclerView.Adapter<ListRoomRecyclerViewAdapter.ViewHolder> {
@@ -33,9 +35,10 @@ public class ListRoomRecyclerViewAdapter extends RecyclerView.Adapter<ListRoomRe
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
-
+        holder.mImgRoom.setImageResource(holder.mItem.getImageRoom());
         holder.mDescription.setText(holder.mItem.getDescriptionRoom());
-        holder.mHotelPrice.setText(String.format("%.0f", holder.mItem.getPriceRoom()));
+        DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
+        holder.mHotelPrice.setText(String.format("%s", decimalFormat.format(holder.mItem.getPriceRoom())));
         holder.mPeople.setText(holder.mItem.getPeople() + "");
 
 
@@ -74,6 +77,7 @@ public class ListRoomRecyclerViewAdapter extends RecyclerView.Adapter<ListRoomRe
         public  TextView mPeople;
         public View mFrameItem;
         public Button btnBook;
+        public ImageView mImgRoom;
 
 
         public ViewHolder(FragmentListRoomBinding binding) {
@@ -83,6 +87,7 @@ public class ListRoomRecyclerViewAdapter extends RecyclerView.Adapter<ListRoomRe
             this.mFrameItem = binding.FrameItemRoom;
             this.btnBook = binding.btnBook;
             this.mPeople = binding.tvPeople;
+            this.mImgRoom = binding.imgRoom;
         }
     }
 }

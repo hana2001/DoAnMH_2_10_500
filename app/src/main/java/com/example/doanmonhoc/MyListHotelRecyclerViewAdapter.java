@@ -8,6 +8,7 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.doanmonhoc.models.Hotel;
@@ -32,10 +33,12 @@ public class MyListHotelRecyclerViewAdapter extends RecyclerView.Adapter<MyListH
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
+        holder.mImgHotel.setImageResource(holder.mItem.getImage());
         holder.mHotelName.setText(holder.mItem.getName());
-        holder.mHotelName.setMaxLines(2);//set mô tả quần áo thành 2 dòng
+        holder.mHotelName.setMaxLines(2);
         holder.mHotelName.setEllipsize(TextUtils.TruncateAt.END);//nếu mô tả quá dài thì hiện dấu 3 chấm
         holder.mHotelPrice.setText(holder.mItem.getPrice());
+        holder.mLocation.setMaxLines(1);
         holder.mLocation.setText(holder.mItem.getLocation());
         holder.mLocation.setEllipsize(TextUtils.TruncateAt.END);//nếu mô tả quá dài thì hiện dấu 3 chấm
 
@@ -63,6 +66,7 @@ public class MyListHotelRecyclerViewAdapter extends RecyclerView.Adapter<MyListH
         public TextView mHotelPrice;
         public View mFrameItem;
         public TextView mLocation;
+        public ImageView mImgHotel;
 
         public ViewHolder(FragmentListHotelBinding binding) {
             super(binding.getRoot());
@@ -70,6 +74,7 @@ public class MyListHotelRecyclerViewAdapter extends RecyclerView.Adapter<MyListH
             this.mHotelPrice = binding.tvHotelPricePeriod;
             this.mFrameItem = binding.FrameItemHotel;
             this.mLocation = binding.tvLocation;
+            this.mImgHotel = binding.imgHotel;
         }
 
     }

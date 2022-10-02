@@ -34,13 +34,6 @@ public class RoomsActivity extends AppCompatActivity {
 
         binding.btnBack.setOnClickListener(view -> view.getContext().startActivity(new Intent(view.getContext(), MainActivity.class)));
 
-        binding.btnSearch.setOnClickListener(view -> {
-            SearchFragment fragmentSearch = new SearchFragment();
-            fragmentSearch.setArguments(bundle);
-
-            getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.frameData, fragmentSearch).commit();
-        });
 
     }
 }

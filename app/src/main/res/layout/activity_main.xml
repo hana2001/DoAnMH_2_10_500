@@ -22,19 +22,6 @@
             android:text="ĐỒ ÁN MÔN HỌC"/>
     </RelativeLayout>
 
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="CHỌN KHÁCH SẠN NÀO !!!"
-        android:padding="5dp"
-        android:textAlignment="center"
-        android:textSize="30dp"
-        android:textStyle="bold"
-        android:textColor="@color/design_default_color_error"
-        >
-    </TextView>
-
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView"
         android:name="com.example.doanmonhoc.ListHotelFragment"

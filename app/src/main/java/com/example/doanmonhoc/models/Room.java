@@ -5,15 +5,15 @@ import java.io.Serializable;
 public class Room implements Serializable {
     private String soPhong;
     private String  descriptionRoom;
-    private String ImageRoom;
+    private int ImageRoom;
     private double priceRoom;
     private int people;
     private boolean isBook;
 
-    public Room(String soPhong, String descriptionRoom, String imageRoom, double priceRoom, int people) {
+    public Room(String soPhong, String descriptionRoom, int imageRoom, double priceRoom, int people) {
         this.soPhong = soPhong;
         this.descriptionRoom = descriptionRoom;
-        ImageRoom = imageRoom;
+        this.ImageRoom = imageRoom;
         this.priceRoom = priceRoom;
         this.people = people;
         this.isBook = false;
@@ -43,11 +43,11 @@ public class Room implements Serializable {
         this.descriptionRoom = descriptionRoom;
     }
 
-    public String getImageRoom() {
+    public int getImageRoom() {
         return ImageRoom;
     }
 
-    public void setImageRoom(String imageRoom) {
+    public void setImageRoom(int imageRoom) {
         ImageRoom = imageRoom;
     }
 

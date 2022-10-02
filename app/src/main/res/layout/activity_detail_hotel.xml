@@ -51,7 +51,6 @@
                     android:adjustViewBounds="false"
                     android:clickable="true"
                     android:scaleType="fitXY"
-                    android:src="@drawable/hotel1"
                     app:layout_constraintBottom_toTopOf="@+id/guideline2"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -121,15 +120,17 @@
 
                 <TextView
                     android:id="@+id/tv_owner_name"
-                    android:layout_width="wrap_content"
+                    android:layout_width="45dp"
                     android:layout_height="wrap_content"
-                    android:text="fares Saleem"
+                    android:text="Nguyễn Văn A"
                     android:textColor="@color/black"
-                    android:textSize="13sp"
+                    android:textSize="19sp"
                     app:layout_constraintBottom_toBottomOf="@+id/tv_price"
                     app:layout_constraintEnd_toEndOf="@+id/textView14"
+                    app:layout_constraintHorizontal_bias="0.531"
                     app:layout_constraintStart_toStartOf="@+id/textView14"
-                    app:layout_constraintTop_toTopOf="@+id/tv_price" />
+                    app:layout_constraintTop_toTopOf="@+id/tv_price"
+                    app:layout_constraintVertical_bias="0.678" />
 
                 <TextView
                     android:id="@+id/textView14"

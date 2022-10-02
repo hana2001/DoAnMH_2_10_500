@@ -1,97 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingHorizontal="30dp"
-    android:paddingTop="10dp"
-    tools:context=".BookRoomActivity">
+    tools:context=".BookRoomActivity"
+    android:orientation="vertical">
 
-
-    <EditText
-        android:id="@+id/etName"
+    <RelativeLayout
+        android:id="@+id/FrameAppbar"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:hint="Tên người đặt"
-        android:focusable="true"
-        android:layout_marginBottom="10dp"
-        />
-    <EditText
-        android:id="@+id/SDT"
-        android:layout_below="@id/etName"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:hint="Số điện thoại"
-        />
-    <LinearLayout
-        android:id="@+id/dateCheckIn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/SDT"
-        android:orientation="horizontal">
-
-        <EditText
-            android:id="@+id/in_dateCheckIn"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="7"
-            android:hint="Ngày đặt" />
+        android:layout_height="60dp"
+        android:background="#0088FF">
 
         <ImageButton
-            android:id="@+id/btn_dateCheckIn"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="55dp"
-            android:layout_toRightOf="@id/in_dateCheckIn"
-            android:background="@null"
-            android:src="@drawable/ic_baseline_calendar_today_24"
-            android:textColor="@color/white"
-            />
-    </LinearLayout>
-    <LinearLayout
-        android:id="@+id/dateCheckOut"
+            android:id="@+id/btnBack"
+            android:layout_centerVertical="true"
+            android:layout_marginHorizontal="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_baseline_arrow_back_24"/>
+
+        <TextView
+            android:layout_toRightOf="@id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:textColor="#fff"
+            android:textSize="25dp"
+            android:layout_marginLeft="10dp"
+            android:text="Thông tin đặt phòng"/>
+    </RelativeLayout>
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/dateCheckIn"
-        android:orientation="horizontal">
-
+        android:layout_height="match_parent"
+        android:paddingHorizontal="30dp"
+        android:paddingTop="10dp">
         <EditText
-            android:id="@+id/in_dateCheckOut"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="7"
-            android:hint="Ngày trả" />
-
-        <ImageButton
-            android:id="@+id/btn_dateCheckOut"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="55dp"
-            android:layout_toRightOf="@id/in_dateCheckOut"
-            android:background="@null"
-            android:src="@drawable/ic_baseline_calendar_today_24"
-            android:textColor="@color/white"
+            android:id="@+id/etName"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="Tên người đặt"
+            android:focusable="true"
+            android:layout_marginBottom="10dp"
             />
-    </LinearLayout>
-    <TextView
-        android:id="@+id/tv_tongTien"
-        android:layout_below="@id/dateCheckOut"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="25dp"
-        android:layout_marginTop="20dp"
-        android:textColor="#000"
-        android:text="Tổng tiền: "
-        />
+        <EditText
+            android:id="@+id/SDT"
+            android:layout_below="@id/etName"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="Số điện thoại"
+            />
+        <LinearLayout
+            android:id="@+id/dateCheckIn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/SDT"
+            android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/btnDatPhong"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tv_tongTien"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="15dp"
-        android:text="Đặt phòng" />
+            <EditText
+                android:id="@+id/in_dateCheckIn"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="7"
+                android:hint="Ngày đặt" />
 
-</RelativeLayout>
+            <ImageButton
+                android:id="@+id/btn_dateCheckIn"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="55dp"
+                android:layout_toRightOf="@id/in_dateCheckIn"
+                android:background="@null"
+                android:src="@drawable/ic_baseline_calendar_today_24"
+                android:textColor="@color/white"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/dateCheckOut"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/dateCheckIn"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/in_dateCheckOut"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="7"
+                android:hint="Ngày trả" />
+
+            <ImageButton
+                android:id="@+id/btn_dateCheckOut"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="55dp"
+                android:layout_toRightOf="@id/in_dateCheckOut"
+                android:background="@null"
+                android:src="@drawable/ic_baseline_calendar_today_24"
+                android:textColor="@color/white"
+                />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/tv_tongTien"
+            android:layout_below="@id/dateCheckOut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:layout_marginTop="20dp"
+            android:textColor="#000"
+            android:text="Tổng tiền: "
+            />
+
+        <Button
+            android:id="@+id/btnDatPhong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_tongTien"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="15dp"
+            android:text="Đặt phòng" />
+
+    </RelativeLayout>
+</LinearLayout>

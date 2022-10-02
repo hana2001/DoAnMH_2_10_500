@@ -32,7 +32,7 @@
         android:orientation="horizontal">
 
         <EditText
-            android:id="@+id/in_date"
+            android:id="@+id/in_dateCheckIn"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="7"
@@ -43,7 +43,7 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="55dp"
-            android:layout_toRightOf="@id/in_date"
+            android:layout_toRightOf="@id/in_dateCheckIn"
             android:background="@null"
             android:src="@drawable/ic_baseline_calendar_today_24"
             android:textColor="@color/white"
@@ -57,7 +57,7 @@
         android:orientation="horizontal">
 
         <EditText
-            android:id="@+id/in_date"
+            android:id="@+id/in_dateCheckOut"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="7"
@@ -68,7 +68,7 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="55dp"
-            android:layout_toRightOf="@id/in_date"
+            android:layout_toRightOf="@id/in_dateCheckOut"
             android:background="@null"
             android:src="@drawable/ic_baseline_calendar_today_24"
             android:textColor="@color/white"
@@ -82,7 +82,7 @@
         android:textSize="25dp"
         android:layout_marginTop="20dp"
         android:textColor="#000"
-        android:text="Tổng tiền: ....."
+        android:text="Tổng tiền: "
         />
 
     <Button

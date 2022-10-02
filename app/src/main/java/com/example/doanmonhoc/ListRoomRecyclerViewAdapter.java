@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.doanmonhoc.databinding.FragmentListRoomBinding;
@@ -35,14 +36,26 @@ public class ListRoomRecyclerViewAdapter extends RecyclerView.Adapter<ListRoomRe
 
         holder.mDescription.setText(holder.mItem.getDescriptionRoom());
         holder.mHotelPrice.setText(String.format("%.0f", holder.mItem.getPriceRoom()));
+        holder.mPeople.setText(holder.mItem.getPeople() + "");
+
 
         // Todo: handle onClick item
         holder.mFrameItem.setOnClickListener(view -> {
-            Bundle bd = new Bundle();
-            bd.putSerializable("itemHotel", holder.mItem);
+//            Bundle bd = new Bundle();
+//            bd.putSerializable("itemHotel", holder.mItem);
+//
+//            Intent intent = new Intent(view.getContext(), DetailHotelActivity.class);
+//            intent.putExtra("Data", bd);
+//            view.getContext().startActivity(intent);
 
-            Intent intent = new Intent(view.getContext(), DetailHotelActivity.class);
-            intent.putExtra("Data", bd);
+            // Todo: onclick item room
+        });
+
+        // Todo: onclick Btn Book
+        holder.btnBook.setOnClickListener(view -> {
+            Intent intent = new Intent(view.getContext(), BookRoomActivity.class);
+
+            intent.putExtra("data", holder.mItem);
             view.getContext().startActivity(intent);
         });
 
@@ -58,14 +71,18 @@ public class ListRoomRecyclerViewAdapter extends RecyclerView.Adapter<ListRoomRe
         public Room mItem;
         public TextView mDescription;
         public TextView mHotelPrice;
+        public  TextView mPeople;
         public View mFrameItem;
+        public Button btnBook;
+
 
         public ViewHolder(FragmentListRoomBinding binding) {
             super(binding.getRoot());
             this.mDescription = binding.tvLoaiPhong;
             this.mHotelPrice = binding.tvHotelPricePeriod;
             this.mFrameItem = binding.FrameItemRoom;
-
+            this.btnBook = binding.btnBook;
+            this.mPeople = binding.tvPeople;
         }
     }
 }

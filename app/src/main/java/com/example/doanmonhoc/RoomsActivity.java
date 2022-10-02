@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.example.doanmonhoc.activity.MainActivity;
 import com.example.doanmonhoc.databinding.ActivityRoomsBinding;
 import com.example.doanmonhoc.models.Room;
 
@@ -30,6 +31,16 @@ public class RoomsActivity extends AppCompatActivity {
 
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.frameData, fragment).commit();
+
+        binding.btnBack.setOnClickListener(view -> view.getContext().startActivity(new Intent(view.getContext(), MainActivity.class)));
+
+        binding.btnSearch.setOnClickListener(view -> {
+            SearchFragment fragmentSearch = new SearchFragment();
+            fragmentSearch.setArguments(bundle);
+
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.frameData, fragmentSearch).commit();
+        });
 
     }
 }

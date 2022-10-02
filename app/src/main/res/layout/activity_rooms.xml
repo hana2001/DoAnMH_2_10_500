@@ -4,7 +4,41 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RoomsActivity">
+    tools:context=".RoomsActivity"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/FrameAppbar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#0088FF">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_centerVertical="true"
+            android:layout_marginHorizontal="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_baseline_arrow_back_24"/>
+
+        <TextView
+            android:layout_toRightOf="@id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:textColor="#fff"
+            android:textSize="25dp"
+            android:layout_marginLeft="10dp"
+            android:text="Danh sách phòng"/>
+        <ImageButton
+            android:id="@+id/btnSearch"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginHorizontal="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_baseline_search_24"/>
+    </RelativeLayout>
 
     <FrameLayout
         android:id="@+id/frameData"

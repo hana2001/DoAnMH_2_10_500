@@ -1,5 +1,6 @@
 package com.example.doanmonhoc;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +8,11 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+
+import com.example.doanmonhoc.models.Room;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -59,6 +65,17 @@ public class SearchFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_search, container, false);
+        View view = inflater.inflate(R.layout.fragment_search, container, false);
+
+        Button btnCancel = view.findViewById(R.id.btn_Cancel);
+
+        btnCancel.setOnClickListener(view1 -> {
+            Intent intent1 = new Intent(view.getContext(), RoomsActivity.class);
+
+            intent1.putExtra("data", (ArrayList<Room>) getArguments().getSerializable("data"));
+            view1.getContext().startActivity(intent1);
+        });
+
+        return view;
     }
 }

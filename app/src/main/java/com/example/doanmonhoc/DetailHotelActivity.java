@@ -12,6 +12,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.doanmonhoc.activity.MainActivity;
 import com.example.doanmonhoc.databinding.ActivityDetailHotelBinding;
 import com.example.doanmonhoc.models.Hotel;
 import com.example.doanmonhoc.models.Room;
@@ -43,8 +44,8 @@ public class DetailHotelActivity extends AppCompatActivity {
         RecyclerView RCrooms = binding.RCrooms;
 
         // btn
-        Button btn = binding.btnReserve2;
-        ImageButton btnFav = binding.imgBtnLike2;
+
+        binding.btnBack.setOnClickListener(view -> view.getContext().startActivity(new Intent(view.getContext(), MainActivity.class)));
 
         Intent intent = this.getIntent();
 
@@ -70,7 +71,8 @@ public class DetailHotelActivity extends AppCompatActivity {
         name.setText(hotel.getName());
         location.setText(hotel.getLocation());
         description.setText(hotel.getDescription());
-        price.setText( hotel.getPrice());
+        String[] strings = hotel.getPrice().split(" ");
+        price.setText(String.format("%s\n%s\n%s", strings[0], strings[1], strings[2]));
         phone.setText(hotel.getPhone());
     }
 
